@@ -8,4 +8,4 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 | Wan Zulkarnain bin Wan Hasbullah | 237767 |
 | Mohammad Ikqmar Eizlly bin Marzuki | 237802 |
 | Nik Nur Aini binti Nik Mat | 234241 |
-
+| Nur Syammila Binti Aziz | 234278 |
