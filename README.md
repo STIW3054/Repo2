@@ -6,6 +6,7 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 | Name    | Matrik        |
 | ------------- | -------------    |
 | Wan Zulkarnain bin Wan Hasbullah | 237767 |
+| Mohammad Ikqmar Eizlly bin Marzuki | 237802 |
 
 # Project Requirements
 
