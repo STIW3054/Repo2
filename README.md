@@ -7,6 +7,7 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 | ------------- | -------------    |
 | Wan Zulkarnain bin Wan Hasbullah | 237767 |
 | Mohammad Ikqmar Eizlly bin Marzuki | 237802 |
+| Nik Nur Aini Bt Nik Mat | 234241 |
 
 # Project Requirements
 
