@@ -27,5 +27,3 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
    d. ONE(1) MS Excel file. (Refer to assignment2 for the content of the excel file.)  
 9. The basic flow of the system is shown in Figure 1.
 10. The structure of folders in your computer is shown in Figure 2.
-
-
