@@ -1,8 +1,11 @@
-# For Team 2
+# Real - Time Project
+Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 
-Group Member:
+# Team 2
 
-# 1. Wan Zulkarnain bin Wan Hasbullah   237767
-# 2. Mohammad Ikqmar Eizlly bin Marzuki 237802
-# 3. Nik Nur Aini Bt Nik Mat 234241
+| Name    | Matrik        |
+| ------------- | -------------    |
+| Wan Zulkarnain bin Wan Hasbullah | 237767 |
+| Mohammad Ikqmar Eizlly bin Marzuki | 237802 |
+| Nik Nur Aini binti Nik Mat | 234241 |
 
