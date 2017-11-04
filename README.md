@@ -10,7 +10,7 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 | Mohammad Ikqmar Eizlly bin Marzuki | 237802 |
 | Nur Syammila Binti Aziz | 234278 |
 | Nik Nur Aini Bt Nik Mat | 234241 |
-
+| Amin Asyraf bin Ruslai | 232491 |
 
 # Project Requirements
 
