@@ -6,12 +6,12 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 
 | Name    | Matrik        |
 | ------------- | -------------    |
-| Wan Zulkarnain bin Wan Hasbullah | 237767 |
-| Mohammad Ikqmar Eizlly bin Marzuki | 237802 |
-| Nur Syammila Binti Aziz | 234278 |
-| Muhammad Amsyar bin Abdul Razak| 233131 | 
-| Nik Nur Aini Bt Nik Mat | 234241 |
-| Amin Asyraf bin Ruslai | 232491 |
+| [Wan Zulkarnain bin Wan Hasbullah](http://github.com/wzul) | 237767 |
+| [Mohammad Ikqmar Eizlly bin Marzuki](http://github.com/MarJr) | 237802 |
+| [Nur Syammila Binti Aziz](https://github.com/NurSyammila) | 234278 |
+| [Muhammad Amsyar bin Abdul Razak](https://github.com/amsyarrazak)| 233131 | 
+| [Nik Nur Aini Bt Nik Mat](https://github.com/nikaini) | 234241 |
+| [Amin Asyraf bin Ruslai](https://github.com/AminAsyraf94) | 232491 |
 
 
 # Project Requirements
