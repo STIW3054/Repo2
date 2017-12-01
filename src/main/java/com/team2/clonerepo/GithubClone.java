@@ -7,38 +7,36 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Repository;
 import org.slf4j.impl.StaticLoggerBinder;  //It's look useless but it is needed for GitAPIException.
 
-public class GithubClone {
+public class GithubClone implements Runnable {
 
-    private Git git;
-    private CloneCommand cc;
-    private String[] accountList;
+    private String urlAccount;
+    private String clonePath;
+    private String nameAccount;
 
-    public GithubClone(String[] urlAccountList) {
-        cc = Git.cloneRepository();
-        this.accountList = urlAccountList;
+    public GithubClone(String urlAccount, String clonePath, String nameAccount) {
+        this.urlAccount = urlAccount;
+        this.clonePath = clonePath;
+        this.nameAccount = nameAccount;
     }
 
-    public GithubClone() {
-
-    }
-
-    public void setAccountList(String[] accountList) {
-        cc = Git.cloneRepository();
-        this.accountList = accountList;
-    }
-
-    public void cloneNow(String clonepath, String[] nameAccountList) {
+    public void cloneNow(String clonePath, String nameAccount) {
+        CloneCommand cc = Git.cloneRepository();
         File localPath = null;
-        for (int i = 0; i < accountList.length; i++) {
-            localPath = new File(clonepath + File.separator + nameAccountList[i]);
-            try {
-                CloneCommand cc2 = cc.setURI(accountList[i]);
-                Repository repo = cc2.getRepository();
-                cc2.setDirectory(localPath).call();
+        localPath = new File(clonePath + File.separator + nameAccount);
+        try {
+            CloneCommand cc2 = cc.setURI(urlAccount);
+            Repository repo = cc2.getRepository();
+            cc2.setDirectory(localPath).call();
 
-            } catch (GitAPIException ex) {
-                ex.printStackTrace();
-            }
+        } catch (GitAPIException ex) {
+            //ex.printStackTrace();
+            //ex.getMessage();
         }
     }
+
+    @Override
+    public void run() {
+        cloneNow(clonePath, nameAccount);
+    }
+
 }
