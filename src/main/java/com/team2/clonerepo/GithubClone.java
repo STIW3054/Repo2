@@ -27,9 +27,10 @@ public class GithubClone {
         this.accountList = accountList;
     }
 
-    public void cloneNow(String clonePath) {
-        File localPath = new File(clonePath);
+    public void cloneNow(String clonepath, String[] nameAccountList) {
+        File localPath = null;
         for (int i = 0; i < accountList.length; i++) {
+            localPath = new File(clonepath + File.separator + nameAccountList[i]);
             try {
                 CloneCommand cc2 = cc.setURI(accountList[i]);
                 Repository repo = cc2.getRepository();
