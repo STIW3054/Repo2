@@ -21,7 +21,7 @@ public class RunHere {
         String urlAccountList[];
 
         SelectFolder selectfolder = new SelectFolder();
-        final String CLONEPATH = selectfolder.getPath() + File.separator + System.nanoTime() + File.separator + "STIW3054-A171";
+        final String CLONEPATH = selectfolder.displayDialog().getPath() + File.separator + System.nanoTime() + File.separator + "STIW3054-A171";
 
         GithubAccount githubaccount = new GithubAccount(LISTPATH);
         nameAccountList = githubaccount.getNameAccountList();
