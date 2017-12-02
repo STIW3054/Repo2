@@ -12,6 +12,9 @@ public class SelectFolder extends JPanel implements ActionListener {
 
     public SelectFolder() {
         chooser = new JFileChooser();
+    }
+
+    public SelectFolder displayDialog() {
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle("Please select folder");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -28,7 +31,7 @@ public class SelectFolder extends JPanel implements ActionListener {
             System.out.println("No Selection. Exiting... ");
             System.exit(0);
         }
-
+        return this;
     }
 
     public String getPath() {
