@@ -25,6 +25,8 @@ public class GithubClone implements Runnable {
     public static LinkedList<String> timetaken; //Only log for successful clone
     public static String[] noncompletedarray;
     public static String[] completedarray;
+    
+    public static final int TERMINATIONTIME = 10;
 
     public GithubClone(String urlAccount, String clonePath, String nameAccount) {
         this.urlAccount = urlAccount;
@@ -51,7 +53,7 @@ public class GithubClone implements Runnable {
         executor.shutdown();
         timetaken = new LinkedList<>();
         try {
-            if (!executor.awaitTermination(10, TimeUnit.SECONDS)) {
+            if (!executor.awaitTermination(TERMINATIONTIME, TimeUnit.SECONDS)) {
                 for (int i = 0; i < list.size(); i++) {
                     if (!list.get(i).isDone()) {
                         noncompleted.add(nameAccountList[i]);

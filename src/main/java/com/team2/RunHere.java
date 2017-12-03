@@ -3,6 +3,7 @@ package com.team2;
 import com.team2.clonerepo.GithubAccount;
 import com.team2.clonerepo.GithubClone;
 import com.team2.clonerepo.SelectFolder;
+import com.team2.compilerepo.CompileAdapter;
 import com.team2.compilerepo.CompileCode;
 import com.team2.compilerepo.ListFile;
 import java.io.File;
@@ -21,7 +22,7 @@ public class RunHere {
 
         String nameAccountList[];
         String urlAccountList[];
-        
+
         String uniqueFolder = "" + System.nanoTime();
 
         SelectFolder selectfolder = new SelectFolder();
@@ -35,6 +36,10 @@ public class RunHere {
         String repoCompleted[] = GithubClone.completedarray;
         String repoNonCompleted[] = GithubClone.noncompletedarray;
         
-        ListFile a = new ListFile();
+        CompileAdapter compileadapter = new CompileAdapter();
+        String listFile[] = compileadapter.getListFile(CLONEPATH, nameAccountList);
+        
+        compileadapter.doCompileJavaFile(listFile);
+
     }
 }
