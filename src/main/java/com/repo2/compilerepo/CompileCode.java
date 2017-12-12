@@ -1,4 +1,4 @@
-package com.team2.compilerepo;
+package com.repo2.compilerepo;
 
 import java.io.BufferedReader;
 import java.io.File;

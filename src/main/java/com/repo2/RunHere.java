@@ -1,11 +1,11 @@
-package com.team2;
+package com.repo2;
 
-import com.team2.clonerepo.GithubAccount;
-import com.team2.clonerepo.GithubClone;
-import com.team2.clonerepo.SelectFolder;
-import com.team2.compilerepo.CompileAdapter;
-import com.team2.compilerepo.CompileCode;
-import com.team2.compilerepo.ListFile;
+import com.repo2.clonerepo.GithubAccount;
+import com.repo2.clonerepo.GithubClone;
+import com.repo2.clonerepo.SelectFolder;
+import com.repo2.compilerepo.CompileAdapter;
+import com.repo2.compilerepo.CompileCode;
+import com.repo2.compilerepo.ListFile;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;

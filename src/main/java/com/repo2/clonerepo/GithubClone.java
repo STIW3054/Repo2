@@ -1,4 +1,4 @@
-package com.team2.clonerepo;
+package com.repo2.clonerepo;
 
 import java.io.File;
 import java.util.ArrayList;
