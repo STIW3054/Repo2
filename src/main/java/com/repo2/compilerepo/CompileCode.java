@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/main/java/com/repo2/compilerepo/CompileCode.java
 package com.repo2.compilerepo;
 
 import java.io.BufferedReader;
@@ -94,19 +93,3 @@ public class CompileCode implements Runnable {
     }
 
 }
-=======
-package com.team2.compilerepo;
-
-public class CompileCode implements Runnable {
-
-    public static void compileNow() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-}
->>>>>>> master:src/main/java/com/team2/compilerepo/CompileCode.java
