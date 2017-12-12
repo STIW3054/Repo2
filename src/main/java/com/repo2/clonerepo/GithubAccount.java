@@ -1,4 +1,4 @@
-package com.team2.clonerepo;
+package com.repo2.clonerepo;
 //Test
 import java.io.FileNotFoundException;
 import java.io.FileReader;
