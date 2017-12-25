@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RunAdapter {
 
-    public static final int TERMINATIONTIME = 5;
+    public static final int TERMINATIONTIME = 7;
 
     public void doRunJavaFile(String[] listFile) {
         if (listFile.length == 0) {
