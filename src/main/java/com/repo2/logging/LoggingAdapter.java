@@ -7,9 +7,9 @@ import java.util.Date;
 
 public class LoggingAdapter {
 
-    public static final String CLONELOG = System.getProperty("user.dir") + File.separator + "clone.log";
-    public static final String COMPILELOG = System.getProperty("user.dir") + File.separator + "compile.log";
-    public static final String RUNLOG = System.getProperty("user.dir") + File.separator + "run.log";
+    public static final String CLONELOG = System.getProperty("user.dir") + File.separator + "STIW3054-Result" + File.separator + "clone.log";
+    public static final String COMPILELOG = System.getProperty("user.dir") + File.separator + "STIW3054-Result" + File.separator + "compile.log";
+    public static final String RUNLOG = System.getProperty("user.dir") + File.separator + "STIW3054-Result" + File.separator + "run.log";
 
     public static void cloneLog(String text) {
         log(text, CLONELOG);
@@ -18,8 +18,8 @@ public class LoggingAdapter {
     public static void compileLog(String text) {
         log(text, COMPILELOG);
     }
-    
-    public static void runLog(String text){
+
+    public static void runLog(String text) {
         log(text, RUNLOG);
     }
 
