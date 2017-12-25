@@ -1,5 +1,6 @@
 package com.repo2.clonerepo;
 
+import com.repo2.logging.LoggingAdapter;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -58,6 +59,7 @@ public class GithubClone implements Runnable {
                     if (!list.get(i).isDone()) {
                         noncompleted.add(nameAccountList[i]);
                         list.get(i).cancel(true);
+                        LoggingAdapter.cloneLog("Repo for " + nameAccountList[i] + " is not being cloned due to passing 1 minute waiting");
                         //System.out.println("dah lebih 10 saat iaitu: " + nameAccountList[i]);
                         //Buat program untuk masuk dalam log kata kita cancel
                         //Senaraikan lah maklumat yg patut dalam log contohnya:
@@ -102,7 +104,8 @@ public class GithubClone implements Runnable {
         } catch (GitAPIException ex) {
             //ex.printStackTrace();
             //ex.getMessage();
-
+            LoggingAdapter.cloneLog("Repo for " + nameAccount + " is not being cloned. " + ex.getMessage());
+                        
             //Buat program untuk log error message (contoh: connection timeout)
         }
     }
