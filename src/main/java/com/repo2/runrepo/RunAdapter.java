@@ -28,8 +28,7 @@ public class RunAdapter {
         try {
             if (!executor.awaitTermination(TERMINATIONTIME, TimeUnit.SECONDS)) {
                 for (int i = 0; i < list.size(); i++) {
-                    list.get(i).cancel(true);
-                    
+                    list.get(i).cancel(true); 
                 }
                 executor.shutdownNow();
             }

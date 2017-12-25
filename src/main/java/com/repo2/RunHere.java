@@ -1,25 +1,31 @@
 package com.repo2;
 
+import com.itextpdf.text.DocumentException;
 import com.repo2.clonerepo.GithubAccount;
 import com.repo2.clonerepo.GithubClone;
 import com.repo2.clonerepo.SelectFolder;
 import com.repo2.compilerepo.CompileAdapter;
 import com.repo2.compilerepo.CompileCode;
 import com.repo2.compilerepo.ListFile;
+import com.repo2.generatepdf.GeneratePDF;
 import com.repo2.runrepo.RunAdapter;
 import java.io.File;
+import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class RunHere {
 
     public static final String LISTPATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "com" + File.separator + "repo2" + File.separator + "listname" + File.separator + "List.json";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DocumentException, IOException {
 
         //Commment the line below for production
         //GithubClone.TERMINATIONTIME = 10;
@@ -54,5 +60,7 @@ public class RunHere {
         RunAdapter runadapter = new RunAdapter();
         runadapter.doRunJavaFile(listFile);
         System.out.println("Done!");
+        
+        GeneratePDF gen = new GeneratePDF();
     }
 }
