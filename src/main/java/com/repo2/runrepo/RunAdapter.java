@@ -16,7 +16,7 @@ public class RunAdapter {
             System.out.println("There is no cloned repository. System exiting...");
             System.exit(0);
         }
-        
+
         List<Future> list = new ArrayList<>();
         ExecutorService executor = Executors.newFixedThreadPool(listFile.length);
         for (int i = 0; i < listFile.length; i++) {
@@ -28,7 +28,7 @@ public class RunAdapter {
         try {
             if (!executor.awaitTermination(TERMINATIONTIME, TimeUnit.SECONDS)) {
                 for (int i = 0; i < list.size(); i++) {
-                    list.get(i).cancel(true); 
+                    list.get(i).cancel(true);
                 }
                 executor.shutdownNow();
             }
@@ -36,5 +36,4 @@ public class RunAdapter {
             executor.shutdownNow();
         }
     }
-
 }

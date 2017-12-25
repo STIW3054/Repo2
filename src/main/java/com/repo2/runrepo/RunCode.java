@@ -78,16 +78,18 @@ public class RunCode implements Runnable {
             Process p = builder.start();
             BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
+            String simpanLine = "";
             while (true) {
                 line = r.readLine();
                 if (line == null) {
                     break;
+                } else {
+                    simpanLine += line;
                 }
-                LoggingAdapter.runLog(path + "\" && " + action + " " + commandString);
-                LoggingAdapter.runLog(line);
-                LoggingAdapter.runLog("");
-
             }
+            LoggingAdapter.runLog(path + "\" && " + action + " " + commandString);
+            LoggingAdapter.runLog(simpanLine);
+            LoggingAdapter.runLog("");
         } catch (Exception e) {
             e.printStackTrace();
         }
