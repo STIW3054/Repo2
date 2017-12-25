@@ -46,6 +46,10 @@ public class CompileAdapter {
     }
 
     public void doCompileJavaFile(String[] listFile) {
+        if (listFile.length == 0){
+            System.out.println("There is no cloned repository. System exiting...");
+            System.exit(0);
+        }
         ExecutorService executor = Executors.newFixedThreadPool(listFile.length);
         for (int i = 0; i < listFile.length; i++) {
             executor.submit(new CompileCode(listFile[i]));

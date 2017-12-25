@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RunHere {
 
-    public static final String LISTPATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "com" + File.separator + "team2" + File.separator + "listname" + File.separator + "List.json";
+    public static final String LISTPATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "com" + File.separator + "repo2" + File.separator + "listname" + File.separator + "List.json";
 
     public static void main(String[] args) {
 
