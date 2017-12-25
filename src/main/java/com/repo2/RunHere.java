@@ -6,6 +6,7 @@ import com.repo2.clonerepo.SelectFolder;
 import com.repo2.compilerepo.CompileAdapter;
 import com.repo2.compilerepo.CompileCode;
 import com.repo2.compilerepo.ListFile;
+import com.repo2.runrepo.RunAdapter;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,9 @@ public class RunHere {
 
     public static void main(String[] args) {
 
+        //Commment the line below for production
+        //GithubClone.TERMINATIONTIME = 10;
+
         String nameAccountList[];
         String urlAccountList[];
 
@@ -28,6 +32,8 @@ public class RunHere {
         SelectFolder selectfolder = new SelectFolder();
         final String CLONEPATH = selectfolder.displayDialog().getPath() + File.separator + uniqueFolder + File.separator + "STIW3054-A171";
 
+        System.out.println("Cloning Repository.....");
+
         GithubAccount githubaccount = new GithubAccount(LISTPATH);
         nameAccountList = githubaccount.getNameAccountList();
         urlAccountList = githubaccount.getURLAccountList();
@@ -35,11 +41,18 @@ public class RunHere {
         GithubClone.cloneNow(urlAccountList, CLONEPATH, nameAccountList);
         String repoCompleted[] = GithubClone.completedarray;
         String repoNonCompleted[] = GithubClone.noncompletedarray;
-        
+
+        System.out.println("Done!");
+
         CompileAdapter compileadapter = new CompileAdapter();
         String listFile[] = compileadapter.getListFile(CLONEPATH, nameAccountList);
-        
-        compileadapter.doCompileJavaFile(listFile);
 
+        System.out.println("Compiling Java Files...");
+        compileadapter.doCompileJavaFile(listFile);
+        System.out.println("Done!");
+        System.out.println("Running Bytecode....");
+        RunAdapter runadapter = new RunAdapter();
+        runadapter.doRunJavaFile(listFile);
+        System.out.println("Done!");
     }
 }

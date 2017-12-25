@@ -27,7 +27,7 @@ public class GithubClone implements Runnable {
     public static String[] noncompletedarray;
     public static String[] completedarray;
     
-    public static final int TERMINATIONTIME = 10;
+    public static int TERMINATIONTIME = 60;
 
     public GithubClone(String urlAccount, String clonePath, String nameAccount) {
         this.urlAccount = urlAccount;
@@ -104,7 +104,8 @@ public class GithubClone implements Runnable {
         } catch (GitAPIException ex) {
             //ex.printStackTrace();
             //ex.getMessage();
-            LoggingAdapter.cloneLog("Repo for " + nameAccount + " is not being cloned. " + ex.getMessage());
+            
+            LoggingAdapter.cloneLog("Repo for " + nameAccount + " is not being cloned. " + ex);
                         
             //Buat program untuk log error message (contoh: connection timeout)
         }
