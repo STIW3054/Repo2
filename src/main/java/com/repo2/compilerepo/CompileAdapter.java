@@ -69,6 +69,7 @@ public class CompileAdapter {
                 executor.shutdownNow();
             }
         } catch (InterruptedException ex) {
+            executor.shutdownNow();
         }
     }
 }
