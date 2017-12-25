@@ -27,7 +27,7 @@ public class ListFile implements Callable<String[]> {
     }
 
     public String getFileExtension(String fullName) {
-        
+
         String fileName = new File(fullName).getName();
         int dotIndex = fileName.lastIndexOf('.');
         return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
@@ -35,10 +35,10 @@ public class ListFile implements Callable<String[]> {
 
     public void filterOutNonJavaFiles(String absolutePath) {
 
-        if (getFileExtension(absolutePath).equalsIgnoreCase("Java")){
+        if (getFileExtension(absolutePath).equalsIgnoreCase("Java")) {
             filename.add(absolutePath);
         }
-        
+
     }
 
     public String[] toArray() {

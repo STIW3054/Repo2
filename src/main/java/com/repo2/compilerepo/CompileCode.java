@@ -1,5 +1,6 @@
 package com.repo2.compilerepo;
 
+import com.repo2.logging.LoggingAdapter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -76,7 +77,7 @@ public class CompileCode implements Runnable {
                 if (line == null) {
                     break;
                 }
-                System.out.println(line);
+                LoggingAdapter.compileLog(line);
             }
         } catch (Exception e) {
             e.printStackTrace();
