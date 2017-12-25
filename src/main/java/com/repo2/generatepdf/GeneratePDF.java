@@ -33,7 +33,7 @@ public class GeneratePDF {
         File file2 = new File(COMPILELOG);
         File file3 = new File(RUNLOG);
 
-        createClonePdf(RUNPDF);
+        createClonePdf(CLONEPDF);
         createCompilePdf(COMPILEPDF);
         createRunPdf(RUNPDF);
     }
@@ -41,7 +41,7 @@ public class GeneratePDF {
     public void createClonePdf(String clonepdf) throws FileNotFoundException, DocumentException, IOException {
 
         try {
-            sleep(30 * 1000);
+            sleep(5 * 1000);
         } catch (InterruptedException ex) {
         }
         Document document = new Document();
