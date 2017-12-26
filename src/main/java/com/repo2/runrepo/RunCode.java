@@ -1,4 +1,4 @@
-package com.repo2.compilerepo;
+package com.repo2.runrepo;
 
 import com.repo2.logging.LoggingAdapter;
 import java.io.BufferedReader;
@@ -7,10 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CompileCode implements Runnable {
+public class RunCode implements Runnable {
 
     private File file;
     private String pathFile;
@@ -18,9 +19,14 @@ public class CompileCode implements Runnable {
     private String firstCommand;
     private String secondCommand;
 
-    public CompileCode(String pathFile) {
+    public RunCode(String pathFile) {
         file = new File(pathFile);
         this.pathFile = pathFile;
+        replaceJavaExtension();
+    }
+
+    private void replaceJavaExtension() {
+        pathFile = pathFile.replace("java", "class");
     }
 
     public boolean detectPackageType() {
@@ -37,7 +43,7 @@ public class CompileCode implements Runnable {
                     String dirXPackage = pathFile.replace(packageDir + File.separator, "");
 
                     int slashLast = dirXPackage.lastIndexOf(File.separator);
-                    int dotjava = dirXPackage.lastIndexOf(".java");
+                    int dotjava = dirXPackage.lastIndexOf(".class");
                     String namaClass = dirXPackage.substring(slashLast + 1, dotjava);
                     String namaFile = dirXPackage.substring(slashLast + 1);
 
@@ -48,9 +54,9 @@ public class CompileCode implements Runnable {
                 }
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(CompileCode.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RunCode.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(CompileCode.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RunCode.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         int slashLast = pathFile.lastIndexOf(File.separator);
@@ -64,32 +70,44 @@ public class CompileCode implements Runnable {
     }
 
     public void runTerminal(String path, String commandString, String action) {
-
+        Process p = null;
+        commandString = commandString.replace(".class", "");
         try {
             ProcessBuilder builder = new ProcessBuilder(
                     "cmd.exe", "/c", "cd \"" + path + "\" && " + action + " " + commandString);
             builder.redirectErrorStream(true);
-            Process p = builder.start();
+            p = builder.start();
             BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
+            String simpanLine = "";
+
             while (true) {
                 line = r.readLine();
+
                 if (line == null) {
                     break;
+                } else {
+                    simpanLine += line;
                 }
-                LoggingAdapter.compileLog(line);
             }
+            LoggingAdapter.runLog(path + "\" && " + action + " " + commandString);
+            LoggingAdapter.runLog(simpanLine);
+            LoggingAdapter.runLog("");
+            sleep(3000);
+            p.destroyForcibly();
+            //p.destroy();
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            p.destroyForcibly();
         }
     }
 
     @Override
     public void run() {
         if (detectPackageType()) {
-            runTerminal(firstCommand, secondCommand, "javac");
+            runTerminal(firstCommand, secondCommand, "java");
         } else {
-            runTerminal(firstCommand, secondCommand, "javac -d . ");
+            runTerminal(firstCommand, secondCommand, "java ");
         }
     }
 
