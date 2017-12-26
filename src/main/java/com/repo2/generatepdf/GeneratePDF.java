@@ -41,7 +41,7 @@ public class GeneratePDF {
     public void createClonePdf(String clonepdf) throws FileNotFoundException, DocumentException, IOException {
 
         try {
-            sleep(5 * 1000);
+            sleep(10 * 1000);
         } catch (InterruptedException ex) {
         }
         Document document = new Document();
@@ -77,7 +77,7 @@ public class GeneratePDF {
     public void createCompilePdf(String compilepdf) throws FileNotFoundException, DocumentException, IOException {
 
         try {
-            sleep(30 * 1000);
+            sleep(20 * 1000);
         } catch (InterruptedException ex) {
         }
         Document document = new Document();
@@ -113,7 +113,7 @@ public class GeneratePDF {
     public void createRunPdf(String runpdf) throws FileNotFoundException, DocumentException, IOException {
 
         try {
-            sleep(30 * 1000);
+            sleep(20 * 1000);
         } catch (InterruptedException ex) {
         }
         Document document = new Document();
