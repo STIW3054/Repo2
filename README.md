@@ -17,7 +17,8 @@ Lecturer: [Zhamri Bin Che Ani](https://github.com/zhamri)
 
 # Known Bugs
 
-This program cannot compile maven-based source code
+* This program cannot compile maven-based source code
+* Cannot run on Macbook because using cmd.exe
 
 # Wiki
 
