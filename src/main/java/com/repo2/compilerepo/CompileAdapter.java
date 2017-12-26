@@ -53,7 +53,6 @@ public class CompileAdapter {
             System.out.println("There is no cloned repository. System exiting...");
             System.exit(0);
         }
-
         List<Future> list = new ArrayList<>();
         ExecutorService executor = Executors.newFixedThreadPool(listFile.length);
         for (int i = 0; i < listFile.length; i++) {
