@@ -70,17 +70,20 @@ public class RunCode implements Runnable {
     }
 
     public void runTerminal(String path, String commandString, String action) {
+        Process p = null;
         commandString = commandString.replace(".class", "");
         try {
             ProcessBuilder builder = new ProcessBuilder(
                     "cmd.exe", "/c", "cd \"" + path + "\" && " + action + " " + commandString);
             builder.redirectErrorStream(true);
-            Process p = builder.start();
+            p = builder.start();
             BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
             String simpanLine = "";
+
             while (true) {
                 line = r.readLine();
+
                 if (line == null) {
                     break;
                 } else {
@@ -90,8 +93,12 @@ public class RunCode implements Runnable {
             LoggingAdapter.runLog(path + "\" && " + action + " " + commandString);
             LoggingAdapter.runLog(simpanLine);
             LoggingAdapter.runLog("");
+            sleep(3000);
+            p.destroyForcibly();
+            //p.destroy();
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            p.destroyForcibly();
         }
     }
 

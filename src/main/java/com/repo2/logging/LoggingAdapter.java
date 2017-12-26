@@ -27,7 +27,7 @@ public class LoggingAdapter {
         File file = new File(clonePath);
         Logging cloning = new Logging(file);
         cloning.setText(getTime() + " : " + text);
-        new Thread(cloning).start();
+        new Thread(cloning).run();
     }
 
     public static String getTime() {
